@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by tandrew86 (http://jsbin.com/foyokex/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
+  <title>Óra</title>
+<style id="jsbin-css">
+html, body {
+  height: 100%;
+}
+
+#clock {
+  text-align: center;
+  position: relative;
+  bottom: -50%;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 72px;
+  color: rgba(47, 255, 0, 0.9);
+  padding: 0 auto 0 auto;
+  width: 20%;
+  margin: -36px auto 0 auto;
+  border-top: 2px solid rgba(47, 255, 0, 0.9);
+  border-bottom: 2px solid rgba(47, 255, 0, 0.9);
+}
+</style>
+</head>
+<body>
+  <div id="clock">14:50:00</div>
+<script id="jsbin-javascript">
+function colorClock(){
+  var date = new Date();
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+  
+  if (hours < 10) {
+   hours = '0' + hours;
+  }
+  if (minutes < 10) {
+  minutes = '0' + minutes;
+  }
+  if (seconds < 10) {
+  seconds = '0' + seconds;
+  }
+  var clockFace = (hours + ':' + minutes + ':' + seconds);
+  document.getElementById('clock').innerHTML = clockFace;
+    setTimeout(function() {
+    colorClock();
+  }, 1000);
+  
+  var hexColor = '#' + hours + minutes + seconds;
+  
+  document.body.style.background = hexColor;
+  
+  
+}
+
+colorClock ();
+</script>
+</body>
+</html>
